@@ -1,0 +1,112 @@
+@font-face {
+    font-family: CenturyGothic;
+    src: url(../fonts/CenturyGothic.ttf);
+}
+@font-face {
+    font-family: DM-Sans;
+    src: url(../fonts/DMSans-Regular.ttf);
+}
+
+body, html {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Needed for flash messages sliding in */
+}
+#wrapper{
+    /* --vh set in default.js
+    https://css-tricks.com/the-trick-to-viewport-units-on-mobile
+    if not found 1vh is fallback value, phpStorm warning can be ignored */
+    height: calc(var(--vh, 2vh) * 100);
+}
+
+/* Text */
+* {
+    /* border-box specifies that the borders and padding should be attributed to element's width
+    and height and not overflowing to the parent.
+    https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    box-sizing: border-box;
+    font-family: DM-Sans, CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-shadow: 1px 0 0 black;
+    text-decoration: none;
+}
+
+.no-style-a, .no-style-a:hover{
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.green-text{
+    color: limegreen;
+}
+
+.breakParagraph {
+    word-break: break-word;
+}
+
+/* Divs */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.no-animation-on-page-load{
+    transition: none !important;
+}
+
+/* Button */
+.btn{
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    padding: 8px 15px;
+    margin: 15px 0 0;
+    border-radius: 4444px;
+    cursor: pointer;
+    font-size: 100%;
+}
+.btn:hover{
+    background: #c1c1c1;
+    border: #c1c1c1;
+    box-shadow: 0 0 10px #c1c1c1;
+}
+.btn:disabled{
+    border: 1px solid grey;
+    background: whitesmoke;
+    color: grey;
+    cursor: default;
+}
+
+.discrete-link{
+    text-decoration: none;
+    font-style: italic;
+    color: #575757;
+    font-size: 0.9em;
+}
+
+#recaptcha{
+    display: none;
+}
+#recaptcha > div:first-of-type{
+    margin-top: 15px;
+}
+
+@media (min-width: 961px) {
+    #wrapper{
+        height: 100vh;
+    }
+}
+

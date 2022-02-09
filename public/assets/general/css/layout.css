@@ -1,0 +1,80 @@
+/* mobile first min-width sets base and content is adapted to computers. */
+@media (min-width:100px)  {
+    #wrapper{
+        display: flex;
+        flex-direction: column;
+        /* No top/bottom margin on wrapper it makes body not touch the top */
+    }
+    header{
+        margin: 1em 0 1em 0;
+        flex: none;
+    }
+    main {
+        width: 100%;
+        padding: 1em 0.5em 0.5em 1em; /* Not margin, it creates a scrollbar because of wrapper 100vh*/
+        /* Prevent Browser from letting these items shrink to smaller than their content's default minimum size. */
+        flex: 1 0 auto;
+        border-radius: 20px;
+    }
+    footer{
+        flex: none;
+        /* Prevent Browser from letting these items shrink to smaller than their content's default minimum size. */
+        flex-shrink: 0;
+        background: #f6f6f6;
+        padding: 10px;
+        text-align: center;
+        color: #9b9b9b;
+        font-size: 0.9em;
+        margin-top: 1em; /* Same as margin-bottom on header */
+        border-radius: 999px 999px 0 0;
+    }
+    footer a{
+        color: #9B9B9B;
+    }
+    footer a:hover{
+        color: black;
+    }
+    .footer-icon{
+        width: 1em;
+        vertical-align: middle;
+    }
+    #github-icon{
+        width: 1.3em;
+    }
+    address{
+        font-style: normal;
+    }
+    #throttle-div{
+        margin-top: 20px;
+    }
+}
+@media (min-width:400px)  {
+    main {
+        padding: 1em 1em 1em 1em; /* Not margin, it creates a scrollbar because of wrapper 100vh*/
+    }
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    header{
+        margin-top: 2em;
+    }
+    #wrapper{
+        margin: 0 2em;
+    }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+    #wrapper{
+        width: 80%;
+        margin: auto;
+    }
+    header{
+        margin: 2em 0 1em 0;
+    }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+
+
+
